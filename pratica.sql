@@ -37,3 +37,35 @@ DELETE FROM books -- DELETANDO ITENS DA TABELA PELO ID --
 WHERE ID = 1;
 
 
+------------------------------------------------------------------------------------------------------------------
+--  EXERCÍCIO DE FIXAÇÃO --
+
+-- Crie uma tabela de tarefas com pelo menos 3 colunas, sendo uma delas necessariamente a ID (pk)--
+CREATE TABLE tasks (
+    id TEXT PRIMARY KEY NOT NULL UNIQUE,
+    name TEXT NOT NULL,
+    user_id TEXT NOT NULL
+);
+
+-- Popule sua tabela com pelo menos 3 linhas. --
+INSERT INTO tasks(id, name, user_id)
+VALUES
+(001, "Estudar", "Rafael"),
+(002, "Trabalhar", "Rafael"),
+(003, "Descansar", "Rafael");
+
+SELECT * FROM tasks;
+
+-- Delete sua tabela e recrie-a --
+DROP TABLE tasks;
+
+
+-- Monte uma query que edita uma das linhas --
+UPDATE tasks
+SET 
+name = "Gabriel"
+WHERE id = 1;
+
+-- Monte uma query que deleta uma das linhas --
+DELETE FROM tasks
+WHERE id=1;
